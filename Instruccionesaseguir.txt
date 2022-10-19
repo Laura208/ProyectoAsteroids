@@ -1,0 +1,12 @@
+////////// ESTRUCTURA DE UN JUEGO //////////
+
+1) Se declaran las clases que se van a usar en el  juego
+2) Declaraciones iniciales, cargan las condiciones de inicio del juego(se crean variables, matrices e instancias de clases)
+    - Cuando de algo tienes una o dos cosas, lo metes en variables
+    - Cuando de algo tienes una fila de cosas lo metes en una matriz
+    - Cuando de algo tienes un montón de paquetes de información, lo metes en una matriz de clases.
+3) En cualquier juego 
+    -Se inicializa el canvas para poder pintar
+    -Se declaran los controles de teclado, ratón o lo que sea
+4) Función de inicio, se ejecuta una vez, llama a la función de bucle
+5) Función de bucle, se ejecuta de forma repetitiva

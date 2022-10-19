@@ -1,0 +1,51 @@
+<html>
+    <head>
+    <link rel="stylesheet" href="css/estilo.css">
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+        <script src="clases/Bala.js"></script>
+        <script src="clases/Estela.js"></script>
+        <script src="clases/Estrella.js"></script>
+        <script src="clases/Jugador.js"></script>
+        <script src="clases/Recogible.js"></script>
+        <script src="clases/Roca.js"></script>
+        <script src="js/cartelinicio.js"></script>
+        <script src="js/cogerrecogible.js"></script>
+        <script src="js/colisionbalasrocas.js"></script>
+        <script src="js/colisionnaverocas.js"></script>
+        <script src="js/controles.js"></script>
+        <script src="js/dibujacosas.js"></script>
+        <script src="js/inicio.js"></script>
+        <script src="js/jugadormuere.js"></script>
+        <script src="js/marcadores.js"></script>
+        <script src="js/pasardenivel.js"></script>
+        <script src="js/recogible.js"></script>
+        <canvas id="lienzo" width=800px height=800px></canvas>      
+        <script src="js/declaraciones.js"></script>
+        <script>
+            inicio();
+            tiempo = 0;
+////////////////// FUNCION DE BUCLE /////////////////
+            function bucle(){
+                tiempo++;
+                dibujacosas();     
+                cartelinicio();
+                if(mueveangulo == 'izquierda'){jugador.angulo -= 0.1}
+                if(mueveangulo == 'derecha'){jugador.angulo += 0.1}
+                jugador.mueve();
+                jugador.dibuja();
+                recogible();
+                cogerrecogible();
+                colisionbalasrocas();
+                colisionnaverocas();
+                pasardenivel();
+                marcadores();
+                jugadormuere();
+                clearTimeout(temporizador);
+                temporizador = setTimeout("bucle()",30);
+            }
+////////////////// FUNCION DE BUCLE /////////////////
+        </script>
+    </body>
+</html>
